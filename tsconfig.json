@@ -4,8 +4,8 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": false,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
@@ -13,8 +13,26 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
+    "baseUrl": "./src",
+    "paths": {
+      "@AppDashboard/*": ["app.feature/dashboard/*"],
+      "@AppAdmin/*": ["app.feature/admin/*"],
+      "@AppUserSearch/*": ["app.feature/user/user.search/*"],
+      "@AppUserBlock/*": ["app.feature/user/user.block/*"],
+      "@AppAdNetwork/*": ["app.feature/adnetwork/*"],
+      "app.components/*": ["src/app.components/*"],
+      "app.layout/*": ["app.layout/*"],
+      "app.config/*": ["app.config/*"],
+      "app.constants/*": ["app.constants/*"],
+      "app.feature/*": ["app.feature/*"],
+      "app.hooks/*": ["app.hooks/*"],
+      "app.modules/*": ["app.modules/*"],
+      "app.api/*": ["app.modules/api/*"],
+      "app.store/*": ["app.store/*"],
+      "pages/*": ["src/pages/*"]
+    },
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"]
 }
